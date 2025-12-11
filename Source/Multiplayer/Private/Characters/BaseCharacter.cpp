@@ -145,7 +145,7 @@ void ABaseCharacter::Fire()
 	FCollisionQueryParams Params;
 	Params.bTraceComplex = true;
 	Params.AddIgnoredActor(this);
-	DrawDebugLine(GetWorld(), CurrentWeapon->GetSocketLocation(FName("Muzzle")), CurrentWeapon->GetSocketLocation(FName("Muzzle")) + Camera->GetForwardVector() * CurrentWeapon->Range, FColor::Red, false, 2.f, 2, 3.f);
+	//DrawDebugLine(GetWorld(), CurrentWeapon->GetSocketLocation(FName("Muzzle")), CurrentWeapon->GetSocketLocation(FName("Muzzle")) + Camera->GetForwardVector() * CurrentWeapon->Range, FColor::Red, false, 2.f, 2, 3.f);
 	if(GetWorld()->LineTraceSingleByChannel(FireHitResult, CurrentWeapon->GetSocketLocation(FName("Muzzle")), CurrentWeapon->GetSocketLocation(FName("Muzzle")) + Camera->GetForwardVector() * CurrentWeapon->Range, ECollisionChannel::ECC_Visibility)){
 		AActor* HitActor = FireHitResult.GetActor();
 		if(HitActor){
